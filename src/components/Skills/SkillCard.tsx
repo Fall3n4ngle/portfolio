@@ -4,5 +4,5 @@ type Props = {
 };
 
 export default function SkillCard({ image, title }: Props) {
-  return <div>SkillCard</div>;
+  return <section>SkillCard</section>;
 }

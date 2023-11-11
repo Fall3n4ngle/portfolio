@@ -1,7 +1,7 @@
 export default function Projects() {
   return (
-    <div>
+    <section>
       <h3>My Projects</h3>
-    </div>
+    </section>
   );
 }

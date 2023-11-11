@@ -15,5 +15,5 @@ export default function ProjectCard({
   siteLink,
   title,
 }: Props) {
-  return <div>ProjectCard</div>;
+  return <article>ProjectCard</article>;
 }

@@ -6,7 +6,7 @@ import ThemeToggle from "./ThemeToggle";
 export default function Header() {
   return (
     <header className="py-3">
-      <div className="container flex items-center justify-between">
+      <div className=" container flex items-center justify-between">
         <Logo />
         <Navigation />
         <div>
