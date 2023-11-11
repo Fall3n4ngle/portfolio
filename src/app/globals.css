@@ -2,6 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --bg-primary: 247 247 247;
+    --bg-secondary: 232 232 232;
+    --text-primary: 44 44 44;
+    --text-secondary: 112 112 112;
+    --accent-1: 100 0 100;
+    --accent-2: 34 0 99;
+  }
+
+  .dark {
+    --bg-primary: 15 15 15;
+    --bg-secondary: 30 30 30;
+    --text-primary: 245 245 245;
+    --text-secondary: 206 206 206;
+    --accent-1: 100 0 100;
+    --accent-2: 34 0 99;
+  }
+}
+
+body {
+  @apply bg-bg-primary text-text-primary font-regular;
+}
+
 .container {
-  @apply max-w-[1230px] px-[15px] mx-auto;
+  @apply mx-auto max-w-[1230px] px-[15px];
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-title font-bold;
+}
+
+h1 {
+  font-size: 4.209rem;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 3.157rem;
+}
+
+h3 {
+  font-size: 2.369rem;
+}
+
+h4 {
+  font-size: 1.777rem;
+}
+
+h5 {
+  font-size: 1.333rem;
+}
+
+h3 {
+  font-weight: 300;
 }
