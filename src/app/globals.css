@@ -14,7 +14,7 @@
 
   .dark {
     --bg-primary: 15 15 15;
-    --bg-secondary: 30 30 30;
+    --bg-secondary: 35 35 35;
     --text-primary: 245 245 245;
     --text-secondary: 206 206 206;
     --accent-1: 100 0 100;
@@ -49,11 +49,11 @@ h2 {
 }
 
 h3 {
-  font-size: 2.369rem;
+  @apply text-[2.369rem]
 }
 
 h4 {
-  font-size: 1.777rem;
+  @apply text-[1.5rem] sm:text-[1.6rem] md:text-[1.777rem] 
 }
 
 h5 {
@@ -62,4 +62,8 @@ h5 {
 
 h3 {
   font-weight: 300;
+}
+
+input, textarea {
+  @apply bg-bg-secondary
 }

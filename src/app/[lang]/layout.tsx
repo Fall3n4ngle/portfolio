@@ -1,20 +1,23 @@
 import type { Metadata } from "next";
 import { Roboto, Nunito } from "next/font/google";
-import "./globals.css";
-import Header from "@/components/Header";
+import { Header } from "@/components";
+import Providers from "@/providers";
+import { i18n } from "@/i18n-config";
+
+import "../globals.css";
 
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["300", "700"],
   display: "swap",
-  variable: '--font-title',
+  variable: "--font-title",
 });
 
 const nunito = Nunito({
   subsets: ["latin"],
   weight: ["400"],
   display: "swap",
-  variable: '--font-regular',
+  variable: "--font-regular",
 });
 
 export const metadata: Metadata = {
@@ -28,13 +31,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${roboto.variable} ${nunito.variable}`}>
-        <div className="flex min-h-screen flex-col overflow-hidden">
-          <Header />
-          <main className="grow">{children}</main>
-        </div>
+        <Providers>
+          <div className="flex min-h-screen flex-col overflow-hidden">
+            <Header />
+            <main className="grow">{children}</main>
+          </div>
+        </Providers>
       </body>
     </html>
   );
+}
+
+export async function generateStaticParams() {
+  return i18n.locales.map((locale) => ({ lang: locale }))
 }
