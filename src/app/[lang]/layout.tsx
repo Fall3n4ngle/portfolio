@@ -15,7 +15,7 @@ const roboto = Roboto({
 
 const nunito = Nunito({
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["400", "600"],
   display: "swap",
   variable: "--font-regular",
 });
