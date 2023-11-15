@@ -3,14 +3,13 @@ import { VariantProps, cva } from "class-variance-authority";
 import { ButtonHTMLAttributes, PropsWithChildren } from "react";
 
 const buttonVariants = cva(
-  "flex items-center font-semibold whitespace-nowrap sm:text-lg active:translate-y-0.5 hover:scale-[1.04] transition-all px-5 py-2.5 rounded-2xl",
+  "flex items-center font-semibold h-[44px] whitespace-nowrap sm:text-lg active:translate-y-0.5 hover:scale-[1.04] transition-all px-5 py-2.5 rounded-2xl",
   {
     variants: {
       variant: {
-        primary:
-          "gap-2 border-2 bg-text-primary text-bg-primary",
+        primary: "gap-2 border-2 bg-text-primary text-bg-primary",
         icon: "p-2.5 justify-center bg-bg-secondary rounded-full",
-        secondary: "bg-bg-secondary gap-2"
+        secondary: "bg-bg-secondary gap-2",
       },
     },
     defaultVariants: {

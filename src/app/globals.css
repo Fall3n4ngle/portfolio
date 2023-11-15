@@ -40,12 +40,12 @@ h6 {
 }
 
 h1 {
-  @apply text-[2.535rem] sm:text-[3.787rem] md:text-[4.209rem]; 
+  @apply text-[2.535rem] sm:text-[3.787rem] md:text-[4.209rem];
   line-height: 1.1;
 }
 
 h2 {
-  @apply text-[2.652rem] sm:text-[2.841rem] md:text-[3.157rem]
+  @apply text-[2.652rem] sm:text-[2.841rem] md:text-[3.157rem];
 }
 
 h3 {
@@ -65,10 +65,19 @@ h3 {
 }
 
 .lead {
-  @apply text-text-primary/70 md:text-xl break-all;
+  @apply text-text-primary/70 md:text-xl;
 }
 
 input,
 textarea {
   @apply bg-bg-secondary;
+}
+
+.section-title {
+  @apply relative text-center;
+}
+
+.section-title:after {
+  content: "";
+  @apply absolute left-[50%] top-full h-[4px] w-[70px] translate-x-[-50%] rounded-xl bg-bg-secondary;
 }

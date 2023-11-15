@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui";
-import { ArrowDown, ArrowDownToLine, Github, Linkedin } from "lucide-react";
+import { ArrowDown, ArrowDownToLine } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -18,7 +18,6 @@ export default function Hero() {
           <Button variant="secondary">
             Download CV <ArrowDownToLine className="h-6 w-6" />
           </Button>
-
         </div>
       </div>
     </section>
