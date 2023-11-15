@@ -16,3 +16,8 @@ type Project = {
   siteLink: string;
   githubLink: string;
 };
+
+type Skill = {
+  image: StaticImageData
+  title: string;
+};

@@ -19,7 +19,7 @@ export default function ProjectCard({
   direction,
 }: Props) {
   return (
-    <article className="flex flex-col items-center gap-7 lg:gap-10 sm:flex-row">
+    <article className="flex flex-col items-center gap-7 sm:flex-row">
       <div
         className={cn("relative aspect-[9/6] w-full sm:basis-1/2", {
           "sm:order-2": direction === "ltr",
