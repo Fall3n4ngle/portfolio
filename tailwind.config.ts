@@ -20,6 +20,8 @@ const config: Config = {
         "text-secondary": "rgb(var(--text-secondary) / <alpha-value>)",
         "accent-1": "rgb(var(--accent-1) / <alpha-value>)",
         "accent-2": "rgb(var(--accent-2) / <alpha-value>)",
+        error: "rgb(var(--error) / <alpha-value>)",
+        success: "rgb(var(--success) / <alpha-value>)",
       },
       fontFamily: {
         title: ["var(--font-title)"],

@@ -10,6 +10,8 @@
     --text-secondary: 112 112 112;
     --accent-1: 100 0 100;
     --accent-2: 34 0 99;
+    --error: 255 0 0;
+    --success: 75 181 67;
   }
 
   .dark {
@@ -19,6 +21,8 @@
     --text-secondary: 206 206 206;
     --accent-1: 100 0 100;
     --accent-2: 34 0 99;
+    --error: 255 61 61;
+    --success: 75 181 67;
   }
 }
 
@@ -27,7 +31,7 @@ body {
 }
 
 .container {
-  @apply mx-auto max-w-[1230px] px-[15px];
+  @apply mx-auto max-w-[930px] px-[15px];
 }
 
 h1,
