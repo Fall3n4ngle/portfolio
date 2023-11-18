@@ -3,6 +3,7 @@
 import ContactFormEmail from "@/email/ContactFormEmail";
 import { resend } from "./resend";
 import { ContactFormSchema, contactFormSchema } from "./validations";
+import { renderAsync } from "@react-email/components";
 
 export const sendEmail = async (data: ContactFormSchema) => {
   const result = contactFormSchema.safeParse(data);
@@ -16,7 +17,7 @@ export const sendEmail = async (data: ContactFormSchema) => {
       subject: "Message from contact form",
       reply_to: email,
       text: message,
-      react: ContactFormEmail({ name, email, message }),
+      react: renderAsync(ContactFormEmail({ name, email, message })),
     });
 
     if (error) {

@@ -11,6 +11,7 @@ import {
   FormProvider,
   useFormContext,
 } from "react-hook-form";
+import { AnimatePresence, motion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
 import { Label } from "@/components/ui/Label";
@@ -80,11 +81,7 @@ const FormItem = React.forwardRef<
 
   return (
     <FormItemContext.Provider value={{ id }}>
-      <div
-        ref={ref}
-        className={cn("flex gap-1.5", className)}
-        {...props}
-      />
+      <div ref={ref} className={cn("flex gap-1.5", className)} {...props} />
     </FormItemContext.Provider>
   );
 });
@@ -100,7 +97,7 @@ const FormLabel = React.forwardRef<
     <Label
       ref={ref}
       className={cn(
-        "sm:text-lg text-text-primary/70 peer-focus:text-text-primary/100 transition-colors",
+        "text-text-primary/70 transition-colors peer-focus:text-text-primary/100 sm:text-lg",
         className,
       )}
       htmlFor={formItemId}
@@ -157,19 +154,26 @@ const FormMessage = React.forwardRef<
   const { error, formMessageId } = useFormField();
   const body = error ? String(error?.message) : children;
 
-  if (!body) {
-    return null;
-  }
-
   return (
-    <p
-      ref={ref}
-      id={formMessageId}
-      className={cn("text-sm sm:text-base text-error font-semibold ", className)}
-      {...props}
-    >
-      {body}
-    </p>
+    <AnimatePresence>
+      {/* @ts-ignore */}
+      {body && <motion.p
+        ref={ref}
+        id={formMessageId}
+        className={cn(
+          "text-sm font-semibold text-error sm:text-base ",
+          className,
+        )}
+        {...props}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        key={formMessageId}
+        transition={{ duration: 0.2 }}
+      >
+        {body}
+      </motion.p>}
+    </AnimatePresence>
   );
 });
 FormMessage.displayName = "FormMessage";

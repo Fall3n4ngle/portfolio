@@ -20,6 +20,7 @@ import { useToast } from "@/hooks/useToast";
 import ContactFormMessage from "./ContactFormMessage";
 import { sendEmail } from "@/lib/actions";
 import { ContactFormSchema, contactFormSchema } from "@/lib/validations";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function ContactsForm() {
   const { toast } = useToast();
@@ -58,9 +59,10 @@ export default function ContactsForm() {
 
   return (
     <Form {...form}>
-      <form
+      <motion.form
         onSubmit={form.handleSubmit(onSubmit)}
         className="flex flex-col gap-5"
+        layout="size"
       >
         <FormField
           control={form.control}
@@ -115,7 +117,7 @@ export default function ContactsForm() {
             <Send className="h-5 w-5" />
           )}
         </Button>
-      </form>
+      </motion.form>
     </Form>
   );
 }

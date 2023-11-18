@@ -7,7 +7,7 @@ export default function Skills() {
       <h3 className="section-title mb-14 md:mb-20">Skills</h3>
       <ul className="mx-auto flex max-w-[650px] flex-wrap items-center justify-center gap-3">
         {skills.map((skill, index) => (
-          <SkillCard key={index} title={skill} />
+          <SkillCard key={index} title={skill} index={index} />
         ))}
       </ul>
     </section>
