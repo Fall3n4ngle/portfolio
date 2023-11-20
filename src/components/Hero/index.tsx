@@ -3,10 +3,20 @@
 import { Button } from "@/components/ui";
 import { ArrowDown, ArrowDownToLine } from "lucide-react";
 import { motion } from "framer-motion";
+import { useSectionInView } from "@/hooks/useSectionInView";
+import Link from "next/link";
+import { useActiveSection } from "@/providers";
 
 export default function Hero() {
+  const { ref } = useSectionInView("Home", 0.75);
+  const { scrollToSection } = useActiveSection();
+
   return (
-    <section className="flex min-h-screen items-center justify-center gap-24 text-center">
+    <section
+      id="home"
+      ref={ref}
+      className="relative flex h-screen max-h-[800px] scroll-mt-24 items-center justify-center gap-24 text-center"
+    >
       <div className="max-w-[750px]">
         <motion.h3
           initial={{ opacity: 0, y: 100 }}
@@ -33,7 +43,7 @@ export default function Hero() {
           }}
         >
           I specialize in building modern, responsive, fast, seo-friendly and
-          accessible websites using react.js and next.js
+          accessible web applications using react.js and next.js
         </motion.p>
         <motion.div
           className="flex flex-wrap-reverse items-center justify-center gap-3"
@@ -43,9 +53,11 @@ export default function Hero() {
             delay: 0.3,
           }}
         >
-          <Button>
-            Projects <ArrowDown className="h-6 w-6" />
-          </Button>
+          <Link href="#projects" onClick={() => scrollToSection("Projects")}>
+            <Button>
+              Projects <ArrowDown className="h-6 w-6" />
+            </Button>
+          </Link>
           <Button variant="secondary">
             Download CV <ArrowDownToLine className="h-6 w-6" />
           </Button>

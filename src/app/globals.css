@@ -12,6 +12,8 @@
     --accent-2: 34 0 99;
     --error: 255 0 0;
     --success: 75 181 67;
+
+    scroll-behavior: smooth;
   }
 
   .dark {
@@ -84,4 +86,8 @@ textarea {
 .section-title:after {
   content: "";
   @apply absolute left-[50%] top-full h-[4px] w-[70px] translate-x-[-50%] rounded-xl bg-bg-secondary;
+}
+
+.custom-scrollbar {
+  @apply scrollbar scrollbar-w-3 scrollbar-thumb-text-primary/70 scrollbar-thumb-rounded-lg scrollbar-track-bg-secondary;
 }

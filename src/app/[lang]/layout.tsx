@@ -5,6 +5,7 @@ import Providers from "@/providers";
 import { i18n } from "@/i18n-config";
 
 import "../globals.css";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -31,13 +32,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="custom-scrollbar">
       <body className={`${roboto.variable} ${nunito.variable}`}>
         <Providers>
           <div className="flex min-h-screen flex-col overflow-hidden">
             <Header />
             <main className="grow">{children}</main>
           </div>
+          <ScrollToTop />
         </Providers>
       </body>
     </html>
@@ -45,5 +47,5 @@ export default function RootLayout({
 }
 
 export async function generateStaticParams() {
-  return i18n.locales.map((locale) => ({ lang: locale }))
+  return i18n.locales.map((locale) => ({ lang: locale }));
 }

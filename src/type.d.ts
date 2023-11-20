@@ -1,9 +1,11 @@
+type SectionName = "Home" | "Projects" | "Skills" | "Contacts";
+
 type NavigationItem = {
-  label: string;
+  name: SectionName;
   href: string;
 };
 
-type Direction = "rtl" | "ltr"
+type Direction = "rtl" | "ltr";
 
 type Project = {
   image: {
@@ -18,6 +20,6 @@ type Project = {
 };
 
 type Skill = {
-  image: StaticImageData
+  image: StaticImageData;
   title: string;
 };

@@ -1,4 +1,5 @@
-import React, { useEffect, useState, createContext, useContext } from "react";
+import { useSafeContext } from "@/hooks/useSafeContext";
+import React, { useEffect, useState, createContext } from "react";
 
 type Theme = "light" | "dark";
 
@@ -57,12 +58,8 @@ export default function ThemeContextProvider({
   );
 }
 
-export function useTheme() {
-  const context = useContext(ThemeContext);
-
-  if (context === null) {
-    throw new Error("useTheme must be used within a ThemeContextProvider");
-  }
-
-  return context;
-}
+export const useTheme = () =>
+  useSafeContext(
+    ThemeContext,
+    "useTheme must be used within a ThemeContextProvider",
+  );

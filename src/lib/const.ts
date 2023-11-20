@@ -4,20 +4,20 @@ import drakShop from "@/assets/projects/shop-dark.png";
 
 export const navigation: NavigationItem[] = [
   {
-    label: "Home",
-    href: "/",
+    name: "Home",
+    href: "#home",
   },
   {
-    label: "Projects",
+    name: "Projects",
     href: "#projects",
   },
   {
-    label: "Skills",
+    name: "Skills",
     href: "#skills",
   },
   {
-    label: "Contacts",
-    href: "#ontacts",
+    name: "Contacts",
+    href: "#contacts",
   },
 ];
 

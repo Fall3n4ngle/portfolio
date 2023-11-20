@@ -1,5 +1,6 @@
 "use client";
 
+import { useSectionInView } from "@/hooks/useSectionInView";
 import ContactsForm from "./ContactsForm";
 import ContactsInfo from "./ContactsInfo";
 import { motion } from "framer-motion";
@@ -19,8 +20,10 @@ const fadeInAnimationVariants = {
 };
 
 export default function Contacts() {
+  const { ref } = useSectionInView("Contacts", 0.5);
+
   return (
-    <section className="mb-20">
+    <section id="contacts" ref={ref} className="mb-20 scroll-mt-24">
       <h3 className="section-title mb-14 md:mb-20">Contacts</h3>
       <div className="mx-auto flex max-w-[900px] flex-col-reverse gap-10 sm:flex-row md:gap-14">
         <motion.div
